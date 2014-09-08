@@ -1,0 +1,56 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+#export DH_OPTIONS=-v
+
+DESTDIR=$(CURDIR)/debian/tmp
+
+include /usr/share/ocaml/ocamlvars.mk
+
+OCAMLFIND_DESTDIR=$(DESTDIR)/$(OCAML_STDLIB_DIR)
+export OCAMLFIND_DESTDIR
+OCAMLFIND_LDCONF=ignore
+export OCAMLFIND_LDCONF
+
+%:
+	dh $@ --with ocaml
+
+.PHONY: override_dh_auto_build
+override_dh_auto_build:
+	$(MAKE)
+ifeq ($(OCAML_HAVE_OCAMLOPT),yes)
+	$(MAKE) native
+endif 
+
+
+.PHONY: override_dh_auto_configure
+override_dh_auto_configure:
+	./configure --bindir=$(DESTDIR)/usr/bin --libdir=$(DESTDIR)/$(OCAML_STDLIB_DIR) --pkgdir=$(DESTDIR)/usr/lib/ocaml
+
+
+.PHONY: override_dh_auto_install
+override_dh_auto_install:
+	mkdir -p '$(DESTDIR)/usr/bin'
+	mkdir -p '$(OCAMLFIND_DESTDIR)'
+	make install
+	make camlp4/META
+	cp camlp4/META $(DESTDIR)/usr/lib/ocaml/camlp4/META
+
+
+.PHONY: override_dh_install
+override_dh_install:
+	dh_install --fail-missing --sourcedir=$(DESTDIR)
+
+
+.PHONY: override_dh_auto_test
+override_dh_auto_test:
+
+
+# override this to prevent dh_auto_clean to try make distclean, 
+# which creates atd_version.ml
+.PHONY: override_dh_auto_clean
+override_dh_auto_clean:
+	$(MAKE) clean
+	rm -f config.sh myocamlbuild_config.ml camlp4/META

@@ -1,0 +1,11 @@
+camlp4 (4.02.0+1-1ppa1~stable) stable; urgency=medium
+
+  * First release of standalone Camlp4 PPA
+
+ -- Anil Madhavapeddy <anil@recoil.org>  Fri, 29 Aug 2014 15:26:14 +0200
+
+camlp4 (4.02.0-1ppa5) unstable; urgency=medium
+
+  * First release of standalone Camlp4 PPA
+
+ -- Anil Madhavapeddy <anil@recoil.org>  Fri, 29 Aug 2014 15:26:14 +0200

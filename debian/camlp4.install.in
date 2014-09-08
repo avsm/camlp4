@@ -1,0 +1,33 @@
+@OCamlStdlibDir@/camlp4/META
+@OCamlStdlibDir@/camlp4/*.cmo
+@OCamlStdlibDir@/camlp4/*.cma
+@OCamlStdlibDir@/camlp4/*.cmi
+@OCamlStdlibDir@/camlp4/Camlp4Filters/*.cmo
+@OCamlStdlibDir@/camlp4/Camlp4Filters/*.cmi
+@OCamlStdlibDir@/camlp4/Camlp4Parsers/*.cmo
+@OCamlStdlibDir@/camlp4/Camlp4Parsers/*.cmi
+@OCamlStdlibDir@/camlp4/Camlp4Printers/*.cmo
+@OCamlStdlibDir@/camlp4/Camlp4Printers/*.cmi
+@OCamlStdlibDir@/camlp4/Camlp4Top/*.cmo
+@OCamlStdlibDir@/camlp4/Camlp4Top/*.cmi
+OPT: @OCamlStdlibDir@/camlp4/*.o
+OPT: @OCamlStdlibDir@/camlp4/*.cmxa
+OPT: @OCamlStdlibDir@/camlp4/*.a
+OPT: @OCamlStdlibDir@/camlp4/*.cmx
+OPT: @OCamlStdlibDir@/camlp4/Camlp4Filters/*.o
+OPT: @OCamlStdlibDir@/camlp4/Camlp4Filters/*.cmx
+OPT: @OCamlStdlibDir@/camlp4/Camlp4Parsers/*.o
+OPT: @OCamlStdlibDir@/camlp4/Camlp4Parsers/*.cmx
+OPT: @OCamlStdlibDir@/camlp4/Camlp4Printers/*.o
+OPT: @OCamlStdlibDir@/camlp4/Camlp4Printers/*.cmx
+OPT: @OCamlStdlibDir@/camlp4/Camlp4Top/*.o
+OPT: @OCamlStdlibDir@/camlp4/Camlp4Top/*.cmx
+/usr/bin/camlp4
+/usr/bin/camlp4o
+/usr/bin/camlp4r
+/usr/bin/camlp4o
+/usr/bin/mkcamlp4
+/usr/bin/camlp4boot
+/usr/bin/camlp4
+OPT: /usr/bin/camlp4r.opt
+OPT: /usr/bin/camlp4o.opt

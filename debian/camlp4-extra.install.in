@@ -1,0 +1,9 @@
+usr/bin/camlp4of
+usr/bin/camlp4rf
+usr/bin/camlp4oof
+usr/bin/camlp4orf
+usr/bin/camlp4prof
+OPT: usr/bin/camlp4of.opt
+OPT: usr/bin/camlp4rf.opt
+OPT: usr/bin/camlp4oof.opt
+OPT: usr/bin/camlp4orf.opt
