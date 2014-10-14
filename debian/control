@@ -9,7 +9,7 @@ Uploaders:
  Mehdi Dogguy <mehdi@debian.org>
 Build-Depends:
  debhelper (>= 7.1.0~),
- ocaml-nox (>= 4.02.0~),
+ ocaml-nox (>= 4.02.1~),
  dh-ocaml (>= 0.9),
  cdbs
 Standards-Version: 3.9.4
@@ -20,7 +20,7 @@ Homepage: https://github.com/ocaml/camlp4
 Package: camlp4
 Architecture: any
 Depends:
- ocaml-nox (>= 4.02.0~),
+ ocaml-nox (>= 4.02.1~),
  ${shlibs:Depends},
  ${misc:Depends},
  ${ocaml:Depends}
