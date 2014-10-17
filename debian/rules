@@ -27,14 +27,14 @@ endif
 
 .PHONY: override_dh_auto_configure
 override_dh_auto_configure:
-	./configure --bindir=$(DESTDIR)/usr/bin --libdir=$(DESTDIR)/$(OCAML_STDLIB_DIR) --pkgdir=$(DESTDIR)/usr/lib/ocaml
+	./configure --bindir=/usr/bin --libdir=$(OCAML_STDLIB_DIR) --pkgdir=$(OCAML_STDLIB_DIR)
 
 
 .PHONY: override_dh_auto_install
 override_dh_auto_install:
 	mkdir -p '$(DESTDIR)/usr/bin'
 	mkdir -p '$(OCAMLFIND_DESTDIR)'
-	make install
+	make install BINDIR=$(DESTDIR)/usr/bin LIBDIR=$(DESTDIR)/$(OCAML_STDLIB_DIR)
 	make camlp4/META
 	cp camlp4/META $(DESTDIR)/usr/lib/ocaml/camlp4/META
 
